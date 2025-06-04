@@ -1,3 +1,4 @@
+import json
 import os
 import platform
 import logging
@@ -130,13 +131,29 @@ class FileHandler:
         else:
             raise ValueError("Invalid file handle mode!!!")
 
-    def append(self, pathfilename: str, content: str):
-        if self.__handle == FileHandleMode.Traditional:
-            self.__append_file_traditional(pathfilename, content)
-        elif self.__handle == FileHandleMode.Modern:
-            self.__append_file_modern(pathfilename, content)
-        else:
-            raise ValueError("Invalid file handle mode!!!")
+
+def append(self, pathfilename: str, content):
+    """
+    Appends either a string or a dictionary to the target file.
+
+    - If `content` is a dict, it will be serialized as JSON.
+    - If `content` is a string, it will be written directly.
+
+    Args:
+        pathfilename (str): Target file path
+        content (str or dict): Content to append
+    """
+
+    if isinstance(content, dict):
+        content = json.dumps(content) + "\n"
+
+    if self.__handle == FileHandleMode.Traditional:
+        self.__append_file_traditional(pathfilename, content)
+    elif self.__handle == FileHandleMode.Modern:
+        self.__append_file_modern(pathfilename, content)
+    else:
+        raise ValueError("Invalid file handle mode!!!")
+
 
     def exists(self, pathfilename: str) -> bool:
         path = os.path.expanduser(pathfilename) if self.__handle == FileHandleMode.Traditional \
