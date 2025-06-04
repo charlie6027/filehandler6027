@@ -34,3 +34,15 @@ python examples/demo_celebration_output.py
 Here’s what it looks like when running `FileHandler` in both modes:
 
 ![Terminal demo output](docs/img/docs/img/fh_screenshot_dmo.png)
+
+
+## ➕ Append Example
+
+```python
+from filehandler import FileHandler, FileHandleMode
+
+fh = FileHandler(FileHandleMode.Modern)
+
+fh.append('~/Documents/logfile.txt', {'event': 'login', 'user': 'charlie'})
+fh.append('~/Documents/logfile.txt', "raw string log entry")
+
