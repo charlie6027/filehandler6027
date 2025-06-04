@@ -1,6 +1,20 @@
 # 🎉 filehandler6027
 
+[![PyPI version](https://img.shields.io/pypi/v/filehandler6027.svg)](https://pypi.org/project/filehandler6027/)
+[![License](https://img.shields.io/pypi/l/filehandler6027)](https://github.com/charlie6027/filehandler6027/blob/main/LICENSE)
+
 A lightweight Python package to handle file operations (traditional and modern) in a platform-independent way.
+
+---
+
+## 📖 Table of Contents
+
+- [✅ Features](#-features)
+- [🚀 Demo](#-demo)
+- [📦 Installation](#-installation)
+- [🛠️ Optional Enhancements](#-optional-enhancements-if-you-like)
+
+---
 
 ## ✅ Features
 
@@ -8,8 +22,9 @@ A lightweight Python package to handle file operations (traditional and modern) 
 - JSON-style data handling
 - Traditional and modern mode support
 
+---
+
 ## 🚀 Demo
 
 ```bash
 python examples/demo_celebration_output.py
-```
